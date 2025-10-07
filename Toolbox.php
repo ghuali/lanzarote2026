@@ -1,10 +1,39 @@
+#!/usr/bin/php
 <?php
+
+function leerArgs(array $argv): array {
+    $args = array_slice($argv, 1);
+    if (count($args) === 0) {
+        return [];
+    }
+    $comando = $args[0] ?? '';
+    $argumentos = array_slice($args, 1);
+    return [
+        'comando' => $comando,
+        'argumentos' => $argumentos
+    ];
+}
+
+function imprimirUso(): void {
+    $uso = <<<EOT
+> Uso: php toolbox.php <comando> [args]
+> Comandos: saludar, sumar, sumar-todos, es-primo, palabra-mas-larga, estadisticas
+> Ejemplos:
+>   php toolbox.php saludar Ana
+>   php toolbox.php sumar 3 9
+>   php toolbox.php sumar-todos 1 2 3 4
+>   php toolbox.php es-primo 17
+>   php toolbox.php palabra-mas-larga "Frase de ejemplo"
+>   php toolbox.php estadisticas 10 2 8 4
+EOT;
+        echo $uso . "\n";
+}
 
 function saludar($nombre) {
     return "Hola, $nombre";
 }
 
-function sumar($a,$b) {
+function sumar(int $a,int $b) {
     return $a + $b;
 }
 
