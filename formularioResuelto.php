@@ -44,7 +44,7 @@
 
     <div class="container">
         <?php echo $mensaje; ?>
-        <form action="./" method="POST" >
+        <form action="formularioResuelto.php" method="POST" >
             <div class="mb-3">
             <label for="idNombre" class="form-label">Nombre</label>
             <input type="text" name="nombre" class="form-control" id="idNombre" placeholder="Nombre..">
