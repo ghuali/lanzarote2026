@@ -1,10 +1,11 @@
 <?php
-session_start();
+    session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    header("Location: login.php");
-    exit();
-} else {
-    echo "Hola " . $_SESSION['usuario'];
-}
+    var_dump($_SESSION['usuario']);
+    $_SESSION['usuario'] = $_POST['nombre'];
+    if (($_SESSION['usuario']) != NULL) {
+        echo "Hola " . $_SESSION['usuario'];
+    } else {
+        header("Location: login.php");
+    }
 ?>

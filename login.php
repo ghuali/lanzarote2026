@@ -1,15 +1,17 @@
 <?php
-session_start();
+    session_start();
 
 
-$nombre = $_POST['nombre'];
+    $nombre = $_POST['nombre'];
 
-$_SESSION['usuario'] = $nombre;
+    $_SESSION['usuario'] = $nombre;
 
-if ($_SESSION = $nombre) {
-    header("Location: Bienvenido.php");
-    exit();
-}
+    if ($_SESSION['usuario'] == $nombre) {
+        header("Location: Bienvenido.php");
+        echo($_SESSION['usuario']);
+        var_dump($_SESSION['usuario']);
+    }
+    
 
 
 ?>
